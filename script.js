@@ -1,11 +1,11 @@
 // Theme toggle (light/dark)
-const THEME_KEY = 'portfolio-theme';
+const THEME_KEY = 'portfolio-theme-v2';
 
 function getStoredTheme() {
   try {
-    return localStorage.getItem(THEME_KEY) || 'dark';
+    return localStorage.getItem(THEME_KEY) || 'light';
   } catch {
-    return 'dark';
+    return 'light';
   }
 }
 
@@ -31,7 +31,7 @@ const themeToggle = document.querySelector('.theme-toggle');
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     const root = document.documentElement;
-    const current = root.getAttribute('data-theme') || 'dark';
+    const current = root.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     setTheme(next);
   });
